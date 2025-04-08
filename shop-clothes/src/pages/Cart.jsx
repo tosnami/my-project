@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 
-const Cart = () => {
+const Cart = () => { 
+  //ee23iur3u4t34ti3g4firef;u4rg
   // Sample data - in a real app, this would come from state management
   const cartItems = [
     {
