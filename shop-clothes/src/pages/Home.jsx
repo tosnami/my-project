@@ -187,7 +187,7 @@ const Home = () => {
                 placeholder="Enter your email address" 
                 className="flex-grow px-4 py-3 rounded-l-md text-black"
               />
-              <button className="bg-white text-black px-6 py-3 rounded-r-md font-semibold">
+              <button className="bg-white  text-black px-6 py-3 rounded-r-md font-semibold">
                 Subscribe to Newsletter
               </button>
             </div>

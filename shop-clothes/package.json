@@ -3,8 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
+  "homepage": "https://tosnami.github.io/alx-shop-project/shop-clothes",
+  "scripts": {    
+
+"predeploy": "npm run build",
+"deploy": "gh-pages -d dist" ,
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
