@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import SignUp from './pages/SignUp';
 function App() {
   return (
-    <Router>
+    <Router basename="/alx-shop-project/shop-clothes"> {/* استخدم هذا المسار كـ basename */}
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
