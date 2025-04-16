@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
 
           {/* زر Sign Up */}
-          <button className="bg-black text-white px-4 py-2 rounded-md">Sign Up</button>
+          <button className="bg-black  hover:text-blue-600 text-white px-4 py-2 rounded-md">Sign Up</button>
         </div>
       </div>
     </header>
