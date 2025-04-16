@@ -185,7 +185,7 @@ const Home = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email address" 
-                className="flex-grow px-4 py-3 rounded-l-md text-black"
+                className="flex-grow px-4 py-3 rounded-l-md text-white"
               />
               <button className="bg-white  text-black px-6 py-3 rounded-r-md font-semibold">
                 Subscribe to Newsletter
