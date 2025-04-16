@@ -11,7 +11,7 @@ import SignUp from './pages/SignUp';
 function App() {
   return (
     <Router basename="/alx-shop-project"> {/* ✅ تم تصحيح إغلاق العلامة هنا */}
-      <div className="min-h-screen flex flex-col"> {/* ✅ تم تصحيح إغلاق العلامة هنا */}
+      <div className="min-h-screen flex flex-col"> {/* ✅ تم تصحيح إeefefefغلاق العلامة هنا */}
         <Header />
         <main className="flex-grow">
           <Routes>
