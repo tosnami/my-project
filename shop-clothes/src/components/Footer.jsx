@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         
         <div className="container mx-auto mt-8 pt-8 border-t border-gray-200">
-          <p className="text-gray-600 text-center">Shop.co © 2000-2023, All Rights Reserved</p>
+          <p className="text-gray-600 text-center">Shop.co © 2000-2023, Alx</p>
         </div>
       </footer>
     );
