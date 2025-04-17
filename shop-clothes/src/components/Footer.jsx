@@ -39,9 +39,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+      
         <div className="container mx-auto mt-8 pt-8 border-t border-gray-200">
-          <p className="text-gray-600 text-center">Shop.co © 2000-2023, Alx</p>
+          <p className="text-gray-600 text-center">Shop.colothes © 2000-2025 </p>
         </div>
       </footer>
     );
