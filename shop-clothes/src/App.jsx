@@ -1,17 +1,17 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
 import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
-import Cart from './pages/Cart'; // ✅ تم تصحيح المسار هنا
+import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SignUp from './pages/SignUp';
+import Home from './pages/Home'; // لو لسه مش ضايفه
 
 function App() {
   return (
-    <Router basename="/alx-shop-project"> {/* ✅ تم تصحيح إغلاق العلامة هنا */}
-      <div className="min-h-screen flex flex-col"> {/* ✅ تم تصحيح إeefefefغلاق العلامة هنا */}
+    <Router>
+      <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
           <Routes>
