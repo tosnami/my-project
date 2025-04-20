@@ -12,7 +12,7 @@ const Cart = () => {
       
       price: 145,
       size: "Large",
-      color: "White"
+      color: "White" 
     },
     {
       id: 2,
