@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto mt-8 pt-8 border-t border-gray-200 animate-slideInFromBottom delay-3600">
-        <p className="text-gray-600 text-center">Shop.clothes © 2000-2025</p>
+        <p className="text-gray-600 text-center">Shop.clothes ©2025</p>
       </div>
     </footer>
   );
