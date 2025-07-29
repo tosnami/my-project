@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <header className="bg-black shadow-md py-4 px-4 sm:py-3 sm:px-4 text-sm sm:text-base">
-      <div className="container mx-auto flex flex-wrap justify-between items-center gap-4 relative">
+      <div className="container mx-auto flex flex-wrap justify-between items-center gap-4">
         
         {/* Logo */}
         <Link
@@ -16,50 +13,17 @@ const Header = () => {
           SHOP.clothes
         </Link>
 
-        {/* Hamburger icon */}
-        <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {menuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-
-        {/* Navigation links */}
-        <nav
-          className={`${
-            menuOpen ? 'flex' : 'hidden'
-          } md:flex flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-black md:bg-transparent space-y-2 md:space-y-0 md:space-x-4 px-4 py-2 md:p-0 z-10`}
-        >
+        {/* Navigation links - hidden on small screens */}
+        <nav className="hidden md:flex space-x-4">
           <Link to="/" className="text-white hover:text-blue-600 transition-colors duration-300">Shop</Link>
           <Link to="/" className="text-white hover:text-blue-600 transition-colors duration-300">On Sale</Link>
           <Link to="/" className="text-white hover:text-blue-600 transition-colors duration-300">New Arrivals</Link>
           <Link to="/" className="text-white hover:text-blue-600 transition-colors duration-300">Brands</Link>
         </nav>
 
-        {/* Right section */}
-        <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
+        {/* Right section (Search, Cart, Auth) */}
+        <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4 max-w-full">
+          
           {/* Search */}
           <button className="p-2 hover:scale-110 transition-transform duration-300 text-white">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
