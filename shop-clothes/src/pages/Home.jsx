@@ -59,7 +59,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* Hero Section */}
+      
       <section className="bg-gray-100 py-20 px-6 animate-fadeInDown">
         <div className="container mx-auto flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -95,7 +95,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* New Arrivals */}
+      
       <section className="bg-black py-20 px-6 text-white">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
@@ -173,7 +173,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
+      
       <section className="py-16 px-6 bg-black text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>

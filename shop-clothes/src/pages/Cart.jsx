@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 
 const Cart = () => { 
-  //febfhervkjxcbedjfgvi34oq cwdjbf v
   
-  // Sample data - in a real app, this would come from state management
+ 
   const cartItems = [
     {
       id: 1,
@@ -51,7 +50,7 @@ const Cart = () => {
             ))}
           </div>
           
-          {/* Order Summary */}
+          
           <div className="lg:w-1/3 bg-gray-50 p-6 rounded-lg">
             <h2 className="text-xl font-bold mb-6">Order Summary</h2>
             
