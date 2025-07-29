@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 
 const Cart = () => { 
+  //febfhervkjxcbedjfgvi34oq cwdjbf v
   
   // Sample data - in a real app, this would come from state management
   const cartItems = [
