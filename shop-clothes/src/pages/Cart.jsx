@@ -1,18 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 
-const Cart = () => { 
-  
- 
-  const cartItems = [
+const Cart = () => {
+  const [cartItems, setCartItems] = useState([
     {
       id: 1,
       name: "Gradient Graphic T-shirt",
       image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      
       price: 145,
       size: "Large",
-      color: "White" 
+      color: "White"
     },
     {
       id: 2,
@@ -30,7 +28,11 @@ const Cart = () => {
       size: "Large",
       color: "Blue"
     }
-  ];
+  ]);
+
+  const handleDelete = (id) => {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+  };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
   const discount = subtotal * 0.2; // 20% discount
@@ -41,19 +43,18 @@ const Cart = () => {
     <div className="py-12 px-6">
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold mb-8">YOUR CART</h1>
-        
+
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Cart Items */}
           <div className="lg:w-2/3">
             {cartItems.map(item => (
-              <CartItem key={item.id} item={item} />
+              <CartItem key={item.id} item={item} onDelete={handleDelete} />
             ))}
           </div>
-          
-          
+
           <div className="lg:w-1/3 bg-gray-50 p-6 rounded-lg">
             <h2 className="text-xl font-bold mb-6">Order Summary</h2>
-            
+
             <div className="space-y-4 mb-6">
               <div className="flex justify-between">
                 <span className="text-gray-600">Subtotal</span>
@@ -68,19 +69,19 @@ const Cart = () => {
                 <span>${deliveryFee.toFixed(2)}</span>
               </div>
             </div>
-            
+
             <div className="border-t border-gray-200 pt-4 mb-6">
               <div className="flex justify-between font-bold">
                 <span>Total</span>
                 <span>${total.toFixed(2)}</span>
               </div>
             </div>
-            
+
             <div className="mb-6">
               <div className="flex">
-                <input 
-                  type="text" 
-                  placeholder="Add promo code" 
+                <input
+                  type="text"
+                  placeholder="Add promo code"
                   className="flex-grow px-4 py-2 rounded-l-md border border-gray-300"
                 />
                 <button className="bg-black text-white px-4 py-2 rounded-r-md">
@@ -88,9 +89,9 @@ const Cart = () => {
                 </button>
               </div>
             </div>
-            
-            <Link 
-              to="/checkout" 
+
+            <Link
+              to="/checkout"
               className="block bg-black text-white text-center py-3 rounded-md font-semibold"
             >
               Go to Checkout
