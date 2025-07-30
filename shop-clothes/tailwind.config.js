@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}", // تأكد من تغطية كل الملفات في المجلد src
+    "./src/**/*.{html,js,jsx,ts,tsx}", 
   ],
   theme: {
     extend: {
@@ -16,8 +16,8 @@ export default {
         },
       },
       animation: {
-        fadeInDown: 'fadeInDown 2s ease-out forwards', // الأنيميشن الخاص بـ fadeInDown
-        fadeIn: 'fadeIn 2s ease-in-out', // أنيميشن fadeIn بأبطأ وقت
+        fadeInDown: 'fadeInDown 2s ease-out forwards', 
+        fadeIn: 'fadeIn 2s ease-in-out', 
       },
     },
   },
