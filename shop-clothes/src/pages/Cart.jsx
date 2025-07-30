@@ -63,10 +63,10 @@ const Cart = () => {
             </div>
 
             <Link
-              to="/checkout"
-              className="block bg-black text-white text-center py-3 rounded-md font-semibold"
+              to="/invoice"
+              className="block bg-black text-white text-center py-3 rounded-md font-semibold mt-4 hover:bg-white"
             >
-              Go to Checkout
+              show the invoice
             </Link>
           </div>
         </div>
