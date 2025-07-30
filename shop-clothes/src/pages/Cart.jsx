@@ -1,41 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CartItem from '../components/CartItem';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Gradient Graphic T-shirt",
-      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      price: 145,
-      size: "Large",
-      color: "White"
-    },
-    {
-      id: 2,
-      name: "Checkered Shirt",
-      image: "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      price: 180,
-      size: "Medium",
-      color: "Red"
-    },
-    {
-      id: 3,
-      name: "Skinny Fit Jeans",
-      image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      price: 240,
-      size: "Large",
-      color: "Blue"
-    }
-  ]);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartItems(storedCart);
+  }, []);
 
   const handleDelete = (id) => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+    const updatedCart = cartItems.filter((item) => item.id !== id);
+    setCartItems(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
-  const discount = subtotal * 0.2; // 20% discount
+  const discount = subtotal * 0.2;
   const deliveryFee = 15;
   const total = subtotal - discount + deliveryFee;
 
@@ -45,11 +27,14 @@ const Cart = () => {
         <h1 className="text-3xl font-bold mb-8">YOUR CART</h1>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Cart Items */}
           <div className="lg:w-2/3">
-            {cartItems.map(item => (
-              <CartItem key={item.id} item={item} onDelete={handleDelete} />
-            ))}
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => (
+                <CartItem key={item.id} item={item} onDelete={handleDelete} />
+              ))
+            ) : (
+              <p className="text-gray-600">Your cart is empty.</p>
+            )}
           </div>
 
           <div className="lg:w-1/3 bg-gray-50 p-6 rounded-lg">
@@ -74,19 +59,6 @@ const Cart = () => {
               <div className="flex justify-between font-bold">
                 <span>Total</span>
                 <span>${total.toFixed(2)}</span>
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <div className="flex">
-                <input
-                  type="text"
-                  placeholder="Add promo code"
-                  className="flex-grow px-4 py-2 rounded-l-md border border-gray-300"
-                />
-                <button className="bg-black text-white px-4 py-2 rounded-r-md">
-                  Apply
-                </button>
               </div>
             </div>
 

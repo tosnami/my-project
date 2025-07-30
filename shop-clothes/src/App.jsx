@@ -6,8 +6,7 @@ import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SignUp from './pages/SignUp';
-import Home from './pages/Home'; // لو لسه مش ضايفه
-
+import Home from './pages/Home'; 
 function App() {
   return (
     <Router>

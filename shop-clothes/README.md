@@ -20,3 +20,4 @@ src/
 ├── assets/            # Images, fonts, and media files
 ├── App.jsx            # Main app component
 └── main.jsx           # App entry point (Vite setup)
+//ehfdk

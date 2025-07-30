@@ -9,7 +9,7 @@ const SignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
 
-    // هنا ممكن تحفظ بيانات المستخدم محليًا (دي محاكاة مش قاعدة بيانات حقيقية)
+    
     localStorage.setItem('userEmail', email);
     localStorage.setItem('userPassword', password);
 
@@ -42,7 +42,7 @@ const SignUp = () => {
           type="submit"
           className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
         >
-          إنشاء حساب
+          create new account
         </button>
       </form>
     </div>

@@ -8,7 +8,8 @@ const Footer = () => {
             We have clothes that suit your style and which you're proud to wear. From women to men.
           </p>
         </div>
-
+           
+        {/* Right section */}
         <div className="animate-slideInFromLeft delay-600">
           <h4 className="text-black font-bold mb-4 animate-slideInFromLeft delay-600">COMPANY</h4>
           <ul className="space-y-2">

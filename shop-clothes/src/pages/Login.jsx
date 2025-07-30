@@ -9,7 +9,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // تحقق بسيط – تقدر تطوره بعدين
+    
     if (email === 'test@example.com' && password === '123456') {
       alert('تم تسجيل الدخول بنجاح!');
       navigate('/');
