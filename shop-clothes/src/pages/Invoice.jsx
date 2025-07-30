@@ -49,8 +49,13 @@ console.log(cartItems);
           <span>${total.toFixed(2)}</span>
         </div>
 
-        <div className="mt-8 text-center text-sm text-gray-600">
-          Your order will arrive within 3-5 business days.
+      
+         <div className="border-t pt-4 flex justify-between text-lg font-bold text-center text-gray-600">
+          the hotline 8090.
+          </div>
+             <div className="mt-10 text-center text-sm text-gray-600">
+          Your order will arrive within 3-5 days.
+          
         </div>
       </div>
     </div>
