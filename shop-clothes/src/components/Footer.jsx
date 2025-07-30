@@ -9,7 +9,7 @@ const Footer = () => {
           </p>
         </div>
            
-        {/* Right section */}
+       
         <div className="animate-slideInFromLeft delay-600">
           <h4 className="text-black font-bold mb-4 animate-slideInFromLeft delay-600">COMPANY</h4>
           <ul className="space-y-2">

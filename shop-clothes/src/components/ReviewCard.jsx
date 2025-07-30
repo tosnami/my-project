@@ -29,4 +29,4 @@ const ReviewCard = ({ review }) => {
   };
   
   export default ReviewCard;
-  //qwsqwd
+  

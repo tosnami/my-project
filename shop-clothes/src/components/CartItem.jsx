@@ -17,7 +17,7 @@ const CartItem = ({ item, onDelete }) => {
       <div className="flex flex-col items-end gap-2">
         <div className="font-bold animate-slideIn">${item.price}</div>
         
-        {/* زرار الحذف */}
+        
         <button 
           onClick={() => onDelete(item.id)} 
           className="text-red-500 hover:text-red-700 text-sm animate-slideIn"

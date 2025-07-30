@@ -11,10 +11,10 @@ const Login = () => {
 
     
     if (email === 'test@example.com' && password === '123456') {
-      alert('تم تسجيل الدخول بنجاح!');
+      alert('cannot login  ');
       navigate('/');
     } else {
-      alert('بيانات الدخول غير صحيحة');
+      alert(' error ');
     }
   };
 

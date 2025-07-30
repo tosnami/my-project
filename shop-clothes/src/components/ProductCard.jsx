@@ -7,8 +7,8 @@ const ProductCard = ({ product }) => {
       name: product.title,
       image: product.image,
       price: product.price,
-      size: "Large",  // لو عندك حجم
-      color: "White"  // لو عندك لون
+      size: "Large",    
+      color: "White" 
     };
 
     cart.push(newItem);

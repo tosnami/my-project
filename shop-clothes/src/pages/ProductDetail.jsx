@@ -13,7 +13,7 @@ const ProductDetail = () => {
   }, [id]);
 
   const handleAddToCart = () => {
-    console.log("Add to Cart clicked!"); // ✅ للتأكد من الضغط
+    console.log("Add to Cart clicked!"); 
 
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -22,7 +22,7 @@ const ProductDetail = () => {
       name: product.title,
       image: product.image,
       price: product.price,
-      size: "Large",   // أو خليه ديناميكي لو تحب
+      size: "Large",   
       color: "White"
     };
 
