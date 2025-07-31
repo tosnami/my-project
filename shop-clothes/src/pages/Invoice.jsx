@@ -18,7 +18,7 @@ console.log(cartItems);
       <div className="max-w-3xl mx-auto bg-white p-8 shadow-lg rounded">
         <h1 className="text-3xl font-bold mb-8 text-center">Invoice</h1>
 
-        {/* ✅ المنتجات */}
+        {/* products */}
         <ul className="space-y-3 mb-6">
           {cartItems.map((item) => (
             <li key={item.id} className="flex justify-between border-b pb-2 text-base">
@@ -28,7 +28,7 @@ console.log(cartItems);
           ))}
         </ul>
 
-        {/* ✅ الفاتورة */}
+        {/* invoice */}
         <div className="space-y-4 mb-6 text-base">
           <div className="flex justify-between">
             <span>Subtotal</span>
