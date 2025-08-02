@@ -84,11 +84,13 @@ const Header = () => {
           </Link>
 
           {/* Sign Up */}
-          <button
-            className="bg-black text-white px-3 py-1 rounded-md hover:bg-gray-900 hover:text-blue-500 transition-all text-sm"
-          >
-            Sign Up
-          </button>
+          <Link
+             to="/signup"
+              className="bg-black text-white px-3 py-1 rounded-md hover:bg-gray-900 hover:text-blue-500 transition-all text-sm"
+         >
+        Sign Up
+</Link>
+         
         </div>
       </div>
     </header>
