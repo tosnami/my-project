@@ -14,6 +14,7 @@ const Cart = () => {
     const updatedCart = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event('cartUpdated'));
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);

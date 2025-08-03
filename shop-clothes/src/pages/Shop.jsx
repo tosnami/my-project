@@ -1,4 +1,6 @@
+// src/pages/Shop.jsx
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
 
@@ -6,6 +8,10 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [activeCategory, setActiveCategory] = useState('All');
   const [categories, setCategories] = useState([]);
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searchTerm = searchParams.get('search')?.toLowerCase() || '';
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
@@ -19,9 +25,11 @@ const Shop = () => {
       });
   }, []);
 
-  const filteredProducts = activeCategory === 'All'
-    ? products
-    : products.filter(product => product.category === activeCategory);
+  const filteredProducts = products.filter(product => {
+    const matchCategory = activeCategory === 'All' || product.category === activeCategory;
+    const matchSearch = product.title.toLowerCase().includes(searchTerm);
+    return matchCategory && matchSearch;
+  });
 
   return (
     <div className="py-12 px-6">
