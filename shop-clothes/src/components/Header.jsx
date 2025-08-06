@@ -96,35 +96,35 @@ const Header = () => {
         {/* Right section */}
         <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
           {/* Search */}
-          <div className="relative">
-            <button
-              onClick={() => setShowSearch(!showSearch)}
-              className="p-2 hover:scale-110 transition-transform duration-300 text-white"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </button>
+<div className="relative">
+  <button
+    onClick={() => setShowSearch(!showSearch)}
+    className="p-2 hover:scale-110 transition-transform duration-300 text-white"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  </button>
 
-            {showSearch && (
-              <div className="absolute top-10 right-0 bg-white p-2 rounded shadow-md z-20">
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Search products..."
-                  className="border border-gray-300 px-2 py-1 rounded text-black"
-                />
-                <button
-                  onClick={handleSearch}
-                  className="ml-2 bg-blue-500 text-white px-3 py-1 rounded"
-                >
-                  Search
-                </button>
-              </div>
-            )}
-          </div>
+  {showSearch && (
+    <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-[90%] max-w-md bg-white p-3 rounded-lg shadow-lg z-50 flex items-center">
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Search products..."
+        className="flex-1 border border-gray-300 px-3 py-2 rounded text-white"
+      />
+      <button
+        onClick={handleSearch}
+        className="ml-3 bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Search
+      </button>
+    </div>
+  )}
+       </div>
 
           {/* Cart */}
           <Link to="/cart" className="p-2 relative hover:scale-110 transition-transform duration-300 text-white">
