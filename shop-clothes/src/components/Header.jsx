@@ -8,7 +8,7 @@ const Header = () => {
   const [cartCount, setCartCount] = useState(0);
   const navigate = useNavigate();
 
-  // تحديث عداد السلة من localStorage
+ 
   useEffect(() => {
   const updateCartCount = () => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -17,7 +17,7 @@ const Header = () => {
 
   updateCartCount();
 
-  // تحديث عند حذف منتج (في نفس الصفحة)
+  
   window.addEventListener('cartUpdated', updateCartCount);
 
   return () => {
@@ -25,7 +25,7 @@ const Header = () => {
   };
 }, []);
 
-  // تنفيذ البحث
+  
   const handleSearch = () => {
     if (searchTerm.trim()) {
       navigate(`/shop?search=${encodeURIComponent(searchTerm)}`);
@@ -34,7 +34,7 @@ const Header = () => {
     }
   };
 
-  // الضغط على Enter للبحث
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') handleSearch();
   };
@@ -95,8 +95,9 @@ const Header = () => {
 
         {/* Right section */}
         <div className="flex flex-wrap items-center justify-end gap-3 sm:gap-4">
-          {/* Search */}
+        {/* Search */}
 <div className="relative">
+  
   <button
     onClick={() => setShowSearch(!showSearch)}
     className="p-2 hover:scale-110 transition-transform duration-300 text-white"
@@ -106,26 +107,57 @@ const Header = () => {
     </svg>
   </button>
 
+  
   {showSearch && (
-    <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-[90%] max-w-md bg-white p-3 rounded-lg shadow-lg z-50 flex items-center">
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder="Search products..."
-        className="flex-1 border border-gray-300 px-3 py-2 rounded text-white"
-      />
+    <div className="absolute top-full mt-2 left-0 w-full max-w-md z-50 flex items-center gap-3">
+      
+      <div className="relative flex-1 bg-gray-200 rounded-full px-4 py-2 flex items-center">
+        
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-gray-500 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+
+        
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Search products..."
+          className="flex-1 bg-transparent focus:outline-none text-black placeholder-gray-500"
+        />
+
+       
+        {searchTerm && (
+          <button
+            onClick={() => setSearchTerm('')}
+            className="w-5 h-5 rounded-full bg-gray-400 text-white text-xs flex items-center justify-center hover:bg-gray-500"
+          >
+            &times;
+          </button>
+        )}
+      </div>
+
       <button
         onClick={handleSearch}
-        className="ml-3 bg-blue-500 text-white px-4 py-2 rounded"
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
       >
         Search
       </button>
     </div>
   )}
-       </div>
-
+</div>
           {/* Cart */}
           <Link to="/cart" className="p-2 relative hover:scale-110 transition-transform duration-300 text-white">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
