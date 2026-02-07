@@ -8,10 +8,9 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get('https://dummyjson.com/products') // API جديد
+      .get('https://fakestoreapi.com/products')
       .then(res => {
-        // DummyJSON بيرجع res.data.products
-        setProducts(res.data.products.slice(0, 8)); // أول 8 منتجات
+        setProducts(res.data.slice(0, 8)); // أول 8 منتجات
       })
       .catch(err => {
         console.error('Error fetching products:', err);
@@ -57,7 +56,7 @@ const Home = () => {
       </section>
 
       {/* NEW ARRIVALS */}
-      <section className="bg-white py-20 px-6 text-black">
+      <section className="bg-white  py-20 px-6 text-white">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-bold">NEW ARRIVALS</h2>
@@ -65,12 +64,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {products.slice(0, 4).map(product => (
-              <ProductCard key={product.id} product={{
-                id: product.id,
-                title: product.title,
-                price: product.price,
-                image: product.thumbnail || product.image
-              }} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
@@ -85,12 +79,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {products.slice(4, 8).map(product => (
-              <ProductCard key={product.id} product={{
-                id: product.id,
-                title: product.title,
-                price: product.price,
-                image: product.thumbnail || product.image
-              }} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
