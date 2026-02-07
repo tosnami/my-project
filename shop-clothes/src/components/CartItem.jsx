@@ -20,7 +20,7 @@ const CartItem = ({ item, onDelete }) => {
         
         <button 
           onClick={() => onDelete(item.id)} 
-          className="text-red-500 hover:text-red-700 text-sm animate-slideIn"
+          className="text-red-600 hover:text-red-700 text-sm animate-slideIn"
         >
           Delete
         </button>
