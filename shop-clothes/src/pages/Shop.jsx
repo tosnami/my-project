@@ -14,10 +14,10 @@ const Shop = () => {
   const searchTerm = searchParams.get('search')?.toLowerCase() || '';
 
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/products')
+    axios.get('https://dummyjson.com/products') // API الجديد
       .then(res => {
-        setProducts(res.data);
-        const uniqueCategories = ['All', ...new Set(res.data.map(product => product.category))];
+        setProducts(res.data.products); // DummyJSON بيرجع res.data.products
+        const uniqueCategories = ['All', ...new Set(res.data.products.map(product => product.category))];
         setCategories(uniqueCategories);
       })
       .catch(err => {
@@ -50,7 +50,12 @@ const Shop = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={{
+              id: product.id,
+              title: product.title,
+              price: product.price,
+              image: product.thumbnail || product.image
+            }} />
           ))}
         </div>
       </div>
